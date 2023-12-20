@@ -1,7 +1,7 @@
 // This is the API key
 var apiKey = 'd40e3b8f398b80a2a9e638ead63583f2';
 
-// the following is an event listener so that when the search form button is clicked we get the user input for the name of the city, starting date and end date, then we can call the Function to fetch the weather data from OpenWeatherMap and the createCityButton to create a city button
+// the following is an event listener so that when the search form button is clicked we get the user input for the name of the city, starting date, then we can call the Function to fetch the weather data from OpenWeatherMap and the createCityButton to create a city button
 
 $("#search-form").on("submit", function (event) {
     event.preventDefault();
