@@ -37,3 +37,13 @@
     border-color: white;
    
   }
+
+  /* footer */
+  .card-body-contact {
+      text-align: center;
+  }
+
+  .col-contact {
+    width: 30%;
+    margin-top: 20px;
+  }
