@@ -7,12 +7,12 @@ $("#search-form").on("submit", function (event) {
     event.preventDefault();
   
     var cityName = $("#search-input").val().trim();
-    var startDate = $("#start-date").val();
-    var endDate = $("#end-date").val();
+    var startMonth = $("#start-month").val();
+    var startDay = $("#start-day").val();
     
     console.log("City Name:", cityName);
-    console.log("Start Date:", startDate);
-    console.log("End Date:", endDate);
+    console.log("Start Date:", startMonth);
+    console.log("End Date:", startDay);
   
     // Call the getWeatherData function with the cityName, startDate, and endDate
     getWeatherData(cityName, startDate, endDate);
@@ -23,11 +23,11 @@ $("#search-form").on("submit", function (event) {
     $("#search-input").val("");
   });
   
-  function getWeatherData(cityName, startDate, endDate) {
+  function getWeatherData(cityName, startMonth, startDay) {
     // This is the modified query url that includes the start_date and end_date
-    
+
     var queryURL = "https://api.openweathermap.org/data/2.5/forecast?q=" + cityName + "&appid=" + apiKey +
-                   "&start_date=" + startDate + "&end_date=" + endDate;
+                   "&month=" + startMonth + "&day=" + startDay;
     console.log("Query URL:", queryURL);
   
     $.ajax({
