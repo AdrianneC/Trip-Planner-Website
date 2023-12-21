@@ -48,6 +48,7 @@
     margin-top: 20px;
   }
 
+<<<<<<< HEAD
   /* Body1 */
  
   .cityRow1{
@@ -123,3 +124,9 @@
     background-color: rgb(225, 233, 232);
   } 
   
+=======
+
+  .custom-btn {
+    width: 323px;
+   }
+>>>>>>> 8b590816ba3952aab9b09f01920272e2086bf957
