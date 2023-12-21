@@ -171,3 +171,12 @@ h1 {
     border-top: 0.25rem solid #000000;
   }
   
+
+    /* Footer 3*/
+
+.footer-section {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  border-top: 0.25rem solid #000000;
+}
+
