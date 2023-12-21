@@ -78,19 +78,21 @@
       </div>
     </div>
     <div class="d-grid gap-2 col-6 mx-auto">
-      <input class="form-control" type="text" placeholder="City Name" aria-label="City Name">
-
-      <div class="row mt-2">
-        <div class="col-sm-6">
-          <input type="text" class="form-control" placeholder="Date From" id="inputDateFrom">
+      <form id="search-form">
+        <input class="form-control" type="text" id="search-input" placeholder="City Name" aria-label="City Name">
+  
+        <div class="row mt-2">
+          <div class="col-sm-6">
+            <input type="text" class="form-control" placeholder="Date From" id="inputDateFrom">
+          </div>
+          <div class="col-sm-6">
+            <input type="date" class="form-control" placeholder="Date To" id="inputDateTo">
+          </div>
         </div>
-        <div class="col-sm-6">
-          <input type="date" class="form-control" placeholder="Date To" id="inputDateTo">
-        </div>
-      </div>
-      <button class="btn btn-primary custom-btn mt-2 mx-auto" type="button">Search</button>
-  </div>
+        <button class="btn btn-primary custom-btn mt-2 mx-auto" type="submit">Search</button>
+      </form>
     </div>
+  </div>
 
 
     <!-- Modal -->
