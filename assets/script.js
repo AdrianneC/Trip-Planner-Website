@@ -151,6 +151,6 @@ $("#clear-history").on("click", function () {
 
   // After that I have to clear the buttons in the history container and clear all the displayed weather information.
   $("#history").empty();
-  $("#today").empty();
-  $("#forecast").empty();
+  $("#weather-info").empty();
+ 
 });
