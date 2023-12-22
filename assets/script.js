@@ -128,3 +128,29 @@ function saveSearchHistory(cityName) {
   // Finally I save the updated search history in local storage
   localStorage.setItem("searchHistory", JSON.stringify(searchHistory));
 }
+
+function loadSearchHistory() {
+  var searchHistory = JSON.parse(localStorage.getItem("searchHistory")) || [];
+  var uniqueCities = [...new Set(searchHistory)]; 
+
+  // Loop through the search history and create buttons
+  uniqueCities.forEach(function (cityName) {
+    createCityButton(cityName);
+  });
+}
+
+// Then I call the function to load search history on the page 
+
+ loadSearchHistory();
+
+ //  we added a button to clear search history, this would help the user to start a brand new seach and button list.
+
+$("#clear-history").on("click", function () {
+  // First thing after the click event is to clear the search history from local storage
+  localStorage.removeItem("searchHistory");
+
+  // After that I have to clear the buttons in the history container and clear all the displayed weather information.
+  $("#history").empty();
+  $("#weather-info").empty();
+ 
+});
