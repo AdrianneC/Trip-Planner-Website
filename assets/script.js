@@ -128,3 +128,17 @@ function saveSearchHistory(cityName) {
   // Finally I save the updated search history in local storage
   localStorage.setItem("searchHistory", JSON.stringify(searchHistory));
 }
+
+function loadSearchHistory() {
+  var searchHistory = JSON.parse(localStorage.getItem("searchHistory")) || [];
+  var uniqueCities = [...new Set(searchHistory)]; 
+
+  // Loop through the search history and create buttons
+  uniqueCities.forEach(function (cityName) {
+    createCityButton(cityName);
+  });
+}
+
+// Then I call the function to load search history on the page 
+
+ loadSearchHistory();
