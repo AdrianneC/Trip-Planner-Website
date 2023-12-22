@@ -89,3 +89,42 @@ function displayWeatherInfo(weatherData) {
   // Append content row to weather-info div
   $("#weather-info").append($weatherRow);
 }
+
+// With the following function I create a button for the searched city, the buttons will remain in the internal storage untill deleted, and will allow users to perform a quick, updated search based on the city name.
+
+function createCityButton(cityName) {
+  // Here I create a button element if it doesn't exist already, I used the find function in the if statement to check if the button already existed.
+
+  if ($("#history").find(".city-button:contains('" + cityName + "')").length === 0) {
+    
+    var $cityButton = $("<button>");
+
+    // then I set the button text and class
+    $cityButton.text(cityName);
+    $cityButton.addClass("city-button");
+
+    // and apend the button to the history container
+    $("#history").append($cityButton);
+
+    // then I store the city name in local storage
+    saveSearchHistory(cityName);
+
+    // and finally attach click event to the button to display weather information so that when the button is clicked it will call the getWeatherData function to display the updated city forecast.
+
+    $cityButton.on("click", function () {
+      getWeatherData(cityName);
+    });
+  }
+}
+
+// This function saves the city name in the local storage
+function saveSearchHistory(cityName) {
+  // First I get the existing search history from local storage
+  var searchHistory = JSON.parse(localStorage.getItem("searchHistory")) || [];
+
+  // Then, to add them in order, I use the push to add the new city name to the search history
+  searchHistory.push(cityName);
+
+  // Finally I save the updated search history in local storage
+  localStorage.setItem("searchHistory", JSON.stringify(searchHistory));
+}
