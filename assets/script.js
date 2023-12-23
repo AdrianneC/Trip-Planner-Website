@@ -36,8 +36,8 @@ $("#search-form").on("submit", function (event) {
   
   // Displays weather function 
 
-//// Displays weather information
-function displayWeatherInfo(weatherData) {
+  //// Displays weather information
+  function displayWeatherInfo(weatherData) {
   // Clear existing content
   $("#weather-info").empty();
 
@@ -88,11 +88,11 @@ function displayWeatherInfo(weatherData) {
 
   // Append content row to weather-info div
   $("#weather-info").append($weatherRow);
-}
+ }
 
-// With the following function I create a button for the searched city, the buttons will remain in the internal storage untill deleted, and will allow users to perform a quick, updated search based on the city name.
+  // With the following function I create a button for the searched city, the buttons will remain in the internal storage untill deleted, and will allow users to perform a quick, updated search based on the city name.
 
-function createCityButton(cityName) {
+  function createCityButton(cityName) {
   // Here I create a button element if it doesn't exist already, I used the find function in the if statement to check if the button already existed.
 
   if ($("#history").find(".city-button:contains('" + cityName + "')").length === 0) {
