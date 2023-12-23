@@ -130,13 +130,12 @@
 
 
 .jumbo-box {
-  background-image: url(./images/hero-image.png);
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
-  opacity: 0.7;
   margin-top: 80px;
-  margin-bottom: 55px;
+  margin-bottom: 40px;
+  padding-bottom: 40px;
 }
 
 .navbar-logo {
