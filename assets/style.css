@@ -173,28 +173,35 @@ h1 {
   padding: 8px;
   margin-bottom: 8px;
   text-align: center;
-  background-color: #007bff;
+  background-color: #1f2022;
   color: #fff;
-  border: 1px solid #007bff;
+  border: 1px solid #1f2022;
   border-radius: 4px;
   cursor: pointer;
 }
 
 .city-button:hover {
-  background-color: #0056b3;
+  background-color: #1f2022;
 }
 
 #clear-history {
-  margin-top: 10px;
-  background-color: #1bb891;
-  color: #fff;
-  border: 1px solid #1bb891;
-  border-radius: 4px;
+  
+  outline: none;
   cursor: pointer;
+  font-weight: 600;
+  border-radius: 3px;
+  padding: 12px 24px;
+  border: 0;
+  color: #3a4149 !important;
+  background: #e7ebee;
+  line-height: 1.15;
+  font-size: 16px;
 }
 
+
 #clear-history:hover {
-  background-color: #1bb891;
+  transition: all .1s ease;
+    box-shadow: 0 0 0 0 #fff, 0 0 0 3px #ffbc2e;
 }
 
   /* Button 3*/
@@ -208,7 +215,7 @@ h1 {
     padding: 12px 24px;
     border: 0;
     color: #fff !important;
-    background: #1bb891;
+    background: #5db3ff;
     line-height: 1.15;
     font-size: 16px;
 
@@ -216,6 +223,8 @@ h1 {
 
   .btn:hover {
     transition: all .1s ease;
-    background: #1de9b6;
-    box-shadow: 0 0 0 0 #fff, 0 0 0 3px #1de9b6;
+    background: #ffbc2e;
+    box-shadow: 0 0 0 0 #fff, 0 0 0 3px #ffbc2e;
 }
+
+
