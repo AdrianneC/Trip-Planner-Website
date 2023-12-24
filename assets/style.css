@@ -186,15 +186,15 @@ h1 {
 
 #clear-history {
   margin-top: 10px;
-  background-color: #dc3545;
+  background-color: #1bb891;
   color: #fff;
-  border: 1px solid #dc3545;
+  border: 1px solid #1bb891;
   border-radius: 4px;
   cursor: pointer;
 }
 
 #clear-history:hover {
-  background-color: #bd2130;
+  background-color: #1bb891;
 }
 
   /* Button 3*/
