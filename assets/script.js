@@ -48,7 +48,7 @@ $("#search-form").on("submit", function (event) {
   var $weatherRow = $("<div class='row'>");
 
   // Create column for current weather
-  var $firstDayContainer = $("<div class='col-md-12 mx-auto text-center mb-4'>");
+  var $firstDayContainer = $("<div class='col-md-12 mx-auto text-center mb-4 firstDay'>");
   $firstDayContainer.append("<h2>" + weatherData.city.name + "</h2>");
   $firstDayContainer.append("<p>Date: " + currentWeather.dt_txt.split(' ')[0] + "</p>");
   var iconUrl = "https://openweathermap.org/img/w/" + currentWeather.weather[0].icon + ".png";
