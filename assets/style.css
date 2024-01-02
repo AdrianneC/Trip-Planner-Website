@@ -232,27 +232,20 @@ h1 {
   flex-direction: row;
   /* margin-left: 200px; */
 }
+
 .firstDay {
-  
+  color: white;
   background-color: #2D3E50;
 }
 
-/* .first-day-container {
-  width: 1010px;
-  background-color: #2D3E50;
-  color: rgb(32, 31, 31);
-  padding: 10px;
-  margin: 5px;
-  margin-top: -150px;
-  
-} */
+
 
 .forecast-day {
   background-color: #2D3E50;
   color: white;
   padding: 10px;
   margin: 5px;
-  width: 150px;
+  width: 250px;
   margin-left: 50px;
 }
 
