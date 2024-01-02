@@ -1,6 +1,10 @@
 // This is the API key
 var apiKey = 'd40e3b8f398b80a2a9e638ead63583f2';
 
+var cityName;
+
+var activitiesApiKey = 'b1af1b23fc43461ba23a2ed81c8d37b6'
+
 // the following is an event listener so that when the search form button is clicked we get the user input for the name of the city, starting date, then we can call the Function to fetch the weather data from OpenWeatherMap and the createCityButton to create a city button
 
 $("#search-form").on("submit", function (event) {
@@ -14,6 +18,10 @@ $("#search-form").on("submit", function (event) {
     getWeatherData(cityName);
     // Append a button for the searched city
     createCityButton(cityName);
+
+    // we call the function to get the activities data from the Geoapify website
+
+    getActivitiesData(cityName);
   
     // Then clear the search input
     $("#search-input").val("");
@@ -154,3 +162,60 @@ $("#clear-history").on("click", function () {
   $("#weather-info").empty();
  
 });
+
+// supported categories in the Geoapify website we can use to populate the queryURL: accommodation, activity, entertainment, leisure, natural, tourism
+
+function getActivitiesData(cityName) {
+  var queryURL =
+    "https://api.geoapify.com/v2/places?name=" + cityName + "&limit=20&apiKey=" + activitiesApiKey;
+
+  console.log("Query URL:", queryURL);
+
+  $.ajax({
+    url: queryURL,
+    method: "GET",
+  }).then(function (response) {
+    console.log("Activities data for " + cityName, response);
+
+    if (response) {
+      displayActivitiesInfo(response);
+    } else {
+      console.log("No activities found for this city.");
+      $("#activities-info").html("<p>No activities found for this city.</p>");
+    }
+  });
+}
+
+// This is thefunction to display activities such as restaurant and museum 
+function displayActivitiesInfo(activitiesData) {
+  // First clear the existing content
+  $("#activities-info").empty();
+
+  // then checks if there are any results
+  if (activitiesData.features.length === 0) {
+    $("#activities-info").html("<p>No activities found for this city.</p>");
+    return;
+  }
+
+  // Create a container for activities
+  var $activitiesContainer = $("<div class='activities-container'>");
+
+  // Loops through the activities data and create a card for each place
+  activitiesData.features.forEach(function (place) {
+    var name = place.properties.name;
+    var category = place.properties.category;
+    var address = place.properties.formatted_address;
+
+    // Here we create a card for each place
+    var $activityCard = $("<div class='activity-card'>");
+    $activityCard.append("<h3>" + name + "</h3>");
+    $activityCard.append("<p>Category: " + category + "</p>");
+    $activityCard.append("<p>Address: " + address + "</p>");
+
+    // Append the card to the activities container
+    $activitiesContainer.append($activityCard);
+  });
+
+  
+  $("#activities-info").html($activitiesContainer);
+}
