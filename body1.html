@@ -21,7 +21,59 @@
   <title>Page 1</title>
 </head>
 
-<body>
+<body class="page1Body">
+
+   <!-- Navigation bar -->
+   <nav class="navbar navbar-expand-lg bg-body-tertiary customNav">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#"><img src="./assets/images/logo-tr.png" style="width: 35%"  class="navbar-logo" ></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">TOP CITIES</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">TOP ATTRACTIONS</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">ABOUT</a>
+          </li>
+          <li class="nav-item">
+            <a class="btn btn-primary" href="#" role="button">PLAN YOUR TRIP</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav></br>
+  <!-- End navigation bar -->
+
+  <div class="row align-items-center">
+    <div class="container-fluid py-0 text-center">
+      <h1 class="display-6 fw-bold mt-4" style="color: rgb(190, 190, 190);">Plan Your Trip...</h1>
+    
+    </div>
+    <div class="d-grid gap-2 col-6 mx-auto">
+      <form id="search-form" class="text-left mt-3 mb-3">
+        <div class="row mt-2">
+        <div class="col-sm-6">
+        <input class="form-control" type="text" id="search-input" placeholder="Where are you going?..." aria-label="City Name">
+        </div>
+        <div class="col-sm-6">
+        <input type="date" class="form-control" placeholder="Date To" id="inputDateTo">
+        </div>
+        </div>
+       
+        <button class="page1Btn btn-primary custom-btn mt-2 mx-auto" style="width: 400px; border-radius: 10px;" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+
+
+
     <div class="row page1">
         <div class=" cityRow1 col-sm-3 mb-3 mb-sm-0">
           <div class="cities1">

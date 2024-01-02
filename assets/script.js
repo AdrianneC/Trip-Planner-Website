@@ -83,7 +83,7 @@ $("#search-form").on("submit", function (event) {
     $forecastColumn.append($forecastContainer);
 
     // Append forecast column to row
-    $weatherRow.append($forecastColumn);
+    $weatherRow.append($forecastColumn); 
   }
 
   // Append content row to weather-info div
