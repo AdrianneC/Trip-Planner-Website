@@ -1,7 +1,7 @@
 // This is the API key
 var apiKey = 'd40e3b8f398b80a2a9e638ead63583f2';
 
-var cityName;
+var cityName2;
 
 var activitiesApiKey = 'b1af1b23fc43461ba23a2ed81c8d37b6'
 
@@ -11,6 +11,7 @@ $("#search-form").on("submit", function (event) {
     event.preventDefault();
   
     var cityName = $("#search-input").val().trim();
+    cityName2 = $("#search-input").val().trim();
     
     console.log("City Name:", cityName);
   
@@ -165,9 +166,9 @@ $("#clear-history").on("click", function () {
 
 // supported categories in the Geoapify website we can use to populate the queryURL: accommodation, activity, entertainment, leisure, natural, tourism
 
-function getActivitiesData(cityName) {
+function getActivitiesData(cityName2) {
   var queryURL =
-    "https://api.geoapify.com/v2/places?name=" + cityName + "&limit=20&apiKey=" + activitiesApiKey;
+    "https://api.geoapify.com/v1/geocode/search?text=" + cityName2 + "&lang=en&limit=10&type=city&apiKey=" + activitiesApiKey;
 
   console.log("Query URL:", queryURL);
 
@@ -175,7 +176,7 @@ function getActivitiesData(cityName) {
     url: queryURL,
     method: "GET",
   }).then(function (response) {
-    console.log("Activities data for " + cityName, response);
+    console.log("Activities data for " + cityName2, response);
 
     if (response) {
       displayActivitiesInfo(response);
