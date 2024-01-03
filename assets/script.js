@@ -120,6 +120,7 @@ $("#search-form").on("submit", function (event) {
 
     $cityButton.on("click", function () {
       getWeatherData(cityName);
+      getActivitiesData(cityName);
     });
   }
 }
