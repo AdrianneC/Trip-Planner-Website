@@ -264,7 +264,7 @@
   <!--Search Result-->
 
   <div class="row fa-search">
-    <div class=" cityRow col-sm-2 mb-3 mb-sm-0 border border-dark-subtle" style=" margin-top: 10px; height: auto; width: auto; text-align: center; margin-left: 30px; border-radius: 10px;">
+    <div class=" cityRow col-sm-2 mb-3 mb-sm-0 border border-dark-subtle" style=" margin-top: 10px; height: max-content; width: auto; text-align: center; margin-left: 30px; border-radius: 10px;">
       <div class="city">
         <div class="city-body">
           <h2 class="cityTitle fw-normal" >City</h2>
@@ -275,29 +275,21 @@
       </div>
     </div>
     <div class="col-sm-9">
-      <div class="AttrResult1 border border-dark-subtle" id="attractionsLink" style=" height: 100px; border-radius: 10px; margin-top: 10px; text-align: center; margin-left: 70px; margin-bottom: 10px; background-color: rgb(190, 190, 190)"  >
+      <div class="AttrResult1 border border-dark-subtle" id="attractionsLink" style=" height: max-content; border-radius: 10px; margin-top: 10px; text-align: center; margin-left: 70px; margin-bottom: 10px; background-color: rgb(190, 190, 190)"  >
           <div class="AttrResult1-body">
-            <h3 class="AttrResult1-title fw-normal">Attractions</h3>
-            <p class="AttrResult1-text">content</p>
+            <h3 class="AttrResult1-title fw-normal">Attractions:</h3>
+            <p id="activities-info" class="AttrResult1-text"></p>
           </div>
-          <!-- this temporary article shows the activites data from the displayActivitiesInfo js function -->
-          <article id="#activities-info"></article>
-        </div>
-        <div class="AttrResult2 border border-dark-subtle" style=" height: 100px; border-radius: 10px; text-align: center; margin-left: 70px; margin-top: 10px; margin-bottom: 10px; background-color: rgb(190, 190, 190);" >
-          <div class="AttrResult2-body">
-            <h3 class="AttrResult2-title fw-normal">Restaurant</h3>
-            <p class="AttrResult2-text"> content</p>
           </div>
-        </div>
     </div>
   </div>
 
     <!-- Button for modal (temporary) -->
-    <div class="text-center mt-3">
+    <!-- <div class="text-center mt-3">
       <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#infoModal">
         Open Modal
       </button>
-    </div> 
+    </div>  -->
 
 
     <!-- Footer -->

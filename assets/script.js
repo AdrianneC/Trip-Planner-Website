@@ -160,8 +160,11 @@ $("#clear-history").on("click", function () {
   // After that I have to clear the buttons in the history container and clear all the displayed weather information.
   $("#history").empty();
   $("#weather-info").empty();
+  $("#activities-info").empty();
  
 });
+
+
 
 // supported categories in the Geoapify website we can use to populate the queryURL: accommodation, activity, entertainment, leisure, natural, tourism
 function getActivitiesData(cityName) {
@@ -169,7 +172,8 @@ function getActivitiesData(cityName) {
 
   console.log("Query URL:", queryURL);
   let placeId = "";
- let queryURL2;
+  let queryURL2;
+  
   fetch(queryURL)
     .then(response => response.json())
     .then(data => {
@@ -177,70 +181,52 @@ function getActivitiesData(cityName) {
         placeId = data.results[0].place_id;
         console.log(placeId);
 
-       queryURL2 = "https://api.geoapify.com/v2/places?categories=commercial,tourism,leisure,parking.cars,sport,entertainment&filter=place:" + placeId + "&limit=20&apiKey=" + activitiesApiKey;
+        queryURL2 = "https://api.geoapify.com/v2/places?categories=tourism,catering.restaurant&filter=place:" + placeId + "&limit=5&apiKey=" + activitiesApiKey;
 
         return fetch(queryURL2);
       } 
     })
     .then(response => response.json())
     .then(data => {
-      // do stuff with data
-      console.log("Query URL:", queryURL2);
-      console.log (data);
+      // Call the displayActivitiesInfo function with the activities data
+      displayActivitiesInfo(data);
     })
     .catch(error => {
       console.error('Error:', error);
-
     });
 }
 
+function displayActivitiesInfo(activitiesData) {
+  // Clear existing content
+  $("#activities-info").empty();
 
-
-//   $.ajax({
-//     url: queryURL,
-//     method: "GET",
-//   }).then(function (response) {
-//     console.log("Activities data for " + cityName, response);
-
-//     if (response) {
-//       displayActivitiesInfo(response);
-//     } else {
-//       console.log("No activities found for this city.");
-//       $("#activities-info").html("<p>No activities found for this city.</p>");
-//     }
-//   });
-
-
-// // This is thefunction to display activities such as restaurant and museum 
-// function displayActivitiesInfo(activitiesData) {
-//   // First clear the existing content
-//   $("#activities-info").empty();
-
-//   // then checks if there are any results
-//   if (activitiesData.features.length === 0) {
-//     $("#activities-info").html("<p>No activities found for this city.</p>");
-//     return;
-//   }
-
-//   // Create a container for activities
-//   var $activitiesContainer = $("<div class='activities-container'>");
-
-//   // Loops through the activities data and create a card for each place
-//   activitiesData.features.forEach(function (place) {
-//     var name = place.properties.name;
-//     var category = place.properties.category;
-//     var address = place.properties.formatted_address;
-
-//     // Here we create a card for each place
-//     var $activityCard = $("<div class='activity-card'>");
-//     $activityCard.append("<h3>" + name + "</h3>");
-//     $activityCard.append("<p>Category: " + category + "</p>");
-//     $activityCard.append("<p>Address: " + address + "</p>");
-
-//     // Append the card to the activities container
-//     $activitiesContainer.append($activityCard);
-//   });
+  console.log('Activities Data:', activitiesData);
 
   
-//   $("#activities-info").html($activitiesContainer);
-// }
+  if (activitiesData.features && activitiesData.features.length > 0) {
+    
+    var $activitiesContainer = $("<div class='activities-container'>");
+
+   
+    activitiesData.features.forEach(function (activity) {
+      
+      var name = activity.properties.name;
+      var address = activity.properties.address_line1 + ', ' + activity.properties.address_line2;
+      
+
+      var $activityCard = $("<div class='activity-card'>");
+      $activityCard.append("<h4>" + name + "</h4>");
+      $activityCard.append("<p><strong>Address:</strong> " + address + "</p>");
+      
+
+      // Append the card to the activities container
+      $activitiesContainer.append($activityCard);
+    });
+
+    // Append the activities container to the #activities-info 
+    $("#activities-info").append($activitiesContainer);
+  } else {
+    // If there are no activities, display a message
+    $("#activities-info").html("<p>No activities found for this city.</p>");
+  }
+}
