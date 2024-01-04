@@ -29,7 +29,7 @@ No installation is required to view the website in a web browser. The website is
 
 [Trip Planner Website](https://AdrianneC.github.io/Trip-Planner-Website/)
 
-
+[Git Repositories link](https://github.com/AdrianneC/Trip-Planner-Website)
 
 ## Usage
 1. **Plan Your Trip**
