@@ -53,7 +53,7 @@ $("#search-form").on("submit", function (event) {
   
     // Create container for city name
     var $cityContainer = $("<div class='col-md-12 mx-auto text-center mb-4 city-container'>");
-    $cityContainer.append("<h2>" + weatherData.city.name + "</h2>");
+    $cityContainer.append("<h2>" + '5 Day Weather Forecast For ' + weatherData.city.name + "</h2>");
   
     // Append city container to weather row
     $weatherRow.append($cityContainer);
