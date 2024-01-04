@@ -250,6 +250,8 @@ h1 {
 .firstDay {
   color: white;
   background-color: #444549;
+  font-size: 22px;
+  font-family: 'Oswald';
 }
 
 
@@ -261,6 +263,8 @@ h1 {
   margin: 5px;
   width: 250px;
   margin-left: 50px;
+  font-size: 18px;
+  font-family: 'Oswald';
 }
 
 .cityListings {
