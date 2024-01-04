@@ -249,13 +249,13 @@ h1 {
 
 .firstDay {
   color: white;
-  background-color: #2D3E50;
+  background-color: #444549;
 }
 
 
 
 .forecast-day {
-  background-color: #2D3E50;
+  background-color: #444549;
   color: white;
   padding: 10px;
   margin: 5px;
