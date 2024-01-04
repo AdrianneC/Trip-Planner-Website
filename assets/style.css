@@ -35,88 +35,6 @@
     margin-top: 20px;
   }
 
-  /* Body1 */
-
-  .page1Body{
-    background-image: url(./images/depositphotos_470688070-stock-photo-top-view-travel-concept.jpg);
-  }
-
-  .body1Custom-btn{
-    margin-left: 150px;
-  }
- 
-  .cityRow1{
-    padding-top: 50px;
-    padding-left: 70px;
-  }
-  .cities1{
-   
-    border-radius: 20px;
-    height: auto;
-    padding-top: 50px;
-    background-color:  rgb(190, 190, 190);;
-  }
-  .city1-title{
-    text-align: center;
-  }
-  .Attr1{
-    height: auto;
-    text-align: center;
-    border-radius: 20px;
-    margin: 15px;
-    background-color:   rgb(190, 190, 190);;
-   margin-left: 100px;
-  }
-  .Attr1-body{
-    border-radius: 20px;
-  }
-  /* Body 2 */
-  .cityRow2{
-    padding-top: 50px;
-    padding-left: 70px;
-  }
-  .cities2{
-    border: solid;
-    border-radius: 20px;
-    height: 700px;
-    padding-top: 50px;
-    background-color:  rgb(225, 233, 232);;
-  }
-  .city-title{
-    text-align: center;
-  }
-  .Attr2{
-    height: 180px;
-    border: solid;
-    text-align: center;
-    border-radius: 20px;
-    margin: 15px;
-    background-color:  rgb(225, 233, 232);;
-    margin-left: 100px;
-  }
-  .Attr2-body{
-    border-radius: 20px;
-  }
-  /* Body 3*/
-  .img1{
-    border-radius: 20px;
-    height: 300px;
-    width: 300px;
-    border: solid;
-   margin-top: 50px;
-   margin-left: 80px;
-   background-color:  rgb(225, 233, 232);;
-  }
-  .img2{
-    border-radius: 20px;
-    height: 300px;
-    width: 300px;
-    border: solid;
-    margin-top: 50px;
-    margin-left: 80px;
-    background-color: rgb(225, 233, 232);
-  } 
-  
 
   .custom-btn {
     width: 323px;
@@ -154,17 +72,7 @@ h1 {
 .city-text {
   color: white;
   
-}
-
-
-  /* Body 3*/
-
-  .footer-section {
-    padding-top: 2rem;
-    padding-bottom: 2rem;
-    border-top: 0.25rem solid #000000;
-  }
-  
+} 
 
     /* Footer 3*/
 
@@ -249,111 +157,14 @@ h1 {
 
 .firstDay {
   color: white;
-  background-color: #444549;
-  font-size: 22px;
-  font-family: 'Oswald';
+  background-color: #2D3E50;
 }
 
-
-
 .forecast-day {
-  background-color: #444549;
+  background-color: #2D3E50;
   color: white;
   padding: 10px;
   margin: 5px;
   width: 250px;
   margin-left: 50px;
-  font-size: 18px;
-  font-family: 'Oswald';
-}
-
-.cityListings {
-	background: #ebebeb;
-	font-family: "Open Sans", sans-serif;
-}
-.carousel {
-	margin: 30px auto 60px;
-	padding: 0 80px;
-}
-.carousel .carousel-item {
-	text-align: center;
-	overflow: hidden;
-}
-.carousel .carousel-item h4 {
-	font-family: 'Varela Round', sans-serif;
-}
-.carousel .carousel-item img {
-	max-width: 100%;
-	display: inline-block;
-}
-.carousel .carousel-item .btn {
-	border-radius: 0;
-	font-size: 12px;
-	text-transform: uppercase;
-	font-weight: bold;
-	border: none;
-	background: #ffbc2e;
-	padding: 6px 15px;
-	margin-top: 5px;
-}
-.carousel .carousel-item .btn:hover {
-	background: #ffbc2e;
-}
-.carousel .carousel-item .btn i {
-	font-size: 14px;
-	font-weight: bold;
-	margin-left: 5px;
-}
-.carousel .thumb-wrapper {
-	margin: 5px;
-	text-align: left;
-	background: #fff;
-	box-shadow: 0px 2px 2px rgba(0,0,0,0.1);   
-}
-.carousel .thumb-content {
-	padding: 15px;
-	font-size: 13px;
-}
-.carousel-control-prev, .carousel-control-next {
-	height: 44px;
-	width: 44px;
-	background: none;	
-	margin: auto 0;
-	border-radius: 50%;
-	border: 3px solid rgba(0, 0, 0, 0.8);
-}
-.carousel-control-prev i, .carousel-control-next i {
-	font-size: 36px;
-	position: absolute;
-	top: 50%;
-	display: inline-block;
-	margin: -19px 0 0 0;
-	z-index: 5;
-	left: 0;
-	right: 0;
-	color: rgba(0, 0, 0, 0.8);
-	text-shadow: none;
-	font-weight: bold;
-}
-.carousel-control-prev i {
-	margin-left: -3px;
-}
-.carousel-control-next i {
-	margin-right: -3px;
-}
-.carousel-indicators {
-	bottom: -50px;
-}
-.carousel-indicators li, .carousel-indicators li.active {
-	width: 10px;
-	height: 10px;
-	border-radius: 50%;
-	margin: 4px;
-	border: none;
-}
-.carousel-indicators li {	
-	background: #ababab;
-}
-.carousel-indicators li.active {	
-	background: #555;
 }
