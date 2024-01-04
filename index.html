@@ -107,6 +107,7 @@
                     <h4>London</h4>
                     <p>Are you visiting London? Find all the best attractions and restaurants the city can offer.</p>
                     <a href="#" class="btn btn-primary" data-bs-target="#search-input">Search <i class="fa fa-angle-right"></i></a>
+                    <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#infoModal" style="background-color: grey;">More Info <i class="fa fa-angle-right"></i></a>
                   </div>						
                 </div>
               </div>
@@ -119,6 +120,7 @@
                     <h4>New York</h4>
                     <p>The city that never sleeps, look for things to do and places to see in the Big Apple</p>
                     <a href="#" class="btn btn-primary">Search <i class="fa fa-angle-right"></i></a>
+                    <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#infoModal" style="background-color: grey;">More Info <i class="fa fa-angle-right"></i></a>
                   </div>						
                 </div>
               </div>				
@@ -131,6 +133,7 @@
                     <h4>Paris</h4>
                     <p>Visit Moulin Rouge, Eiffel Tower and more when you make a trip to Paris. Build your itinery now…</p>
                     <a href="#" class="btn btn-primary">Search <i class="fa fa-angle-right"></i></a>
+                    <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#infoModal" style="background-color: grey;">More Info <i class="fa fa-angle-right"></i></a>
                   </div>						
                 </div>					
               </div>
@@ -235,7 +238,7 @@
       <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="modalTitle">Place Name</h5>
+            <h3 class="modal-title" id="modalTitle">Things To Do In London</h3>
             <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
@@ -243,18 +246,27 @@
           <div class="modal-body">
             <div class="row">
               <div class="col-md-12 text-center">
-                <img src="" alt="Place Image" id="modalImage" class="img-fluid mb-3">
+                <img src="./assets/images/london.png" alt="Place Image" id="modalImage" class="img-fluid mb-3">
+                <img src="./assets/images/stonehenge.jpeg" alt="Place Image" id="modalImage" class="img-fluid mb-3">
               </div>
               <div class="col-md-12">
-                <h4 id="modalSubtitle"></h4>
-                <h6>Description:</h6>
-                <p id="modalDescription">Not available</p>
+              
+                <h6>Windsor Castle is a royal residence at Windsor in the English county of Berkshire. It is strongly associated with the English and succeeding British royal family, and embodies almost a millennium of architectural history.</h6>
+                <p id="modalDescription"><ul>
+                  <li>Open to the public: Limited access</li>
+                  <li>Hours: 10am - 5pm</li>
+                  <li>Construction started: 1070 </li>
+                  <li>Owner: King Charles III in right of the Crown</li>
+                  <li>0303 123 7334</li>
+                  </ul>
+                 
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
+
 
   
     <!-- Container for the Weather Info -->
