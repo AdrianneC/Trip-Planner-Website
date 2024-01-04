@@ -45,57 +45,46 @@ $("#search-form").on("submit", function (event) {
 
   //// Displays weather information
   function displayWeatherInfo(weatherData) {
-  // Clear existing content
-  $("#weather-info").empty();
-
-  // Extract current weather data
-  var currentWeather = weatherData.list[0];
-
-  // Create row for the weather content
-  var $weatherRow = $("<div class='row'>");
-
-  // Create column for current weather
-  var $firstDayContainer = $("<div class='col-md-12 mx-auto text-center mb-4 firstDay'>");
-  $firstDayContainer.append("<h2>" + weatherData.city.name + "</h2>");
-  $firstDayContainer.append("<p>Date: " + currentWeather.dt_txt.split(' ')[0] + "</p>");
-  var iconUrl = "https://openweathermap.org/img/w/" + currentWeather.weather[0].icon + ".png";
-  $firstDayContainer.append("<img src='" + iconUrl + "' alt='Weather Icon'>");
-  var temperatureCelsius = (currentWeather.main.temp - 273.15).toFixed(2);
-  $firstDayContainer.append("<p>Temperature: " + temperatureCelsius + " °C</p>");
-  $firstDayContainer.append("<p>Humidity: " + currentWeather.main.humidity + "%</p>");
-  $firstDayContainer.append("<p>Wind Speed: " + currentWeather.wind.speed + " m/s</p>");
+    // Clear existing content
+    $("#weather-info").empty();
   
-
-  // Append current weather column to row
-  $weatherRow.append($firstDayContainer);
-
-  // Loop through 5-day forecast
-  for (var i = 1; i < 5; i++) {
-    var forecast = weatherData.list[i * 8];
-    var forecastDate = forecast.dt_txt;
-    var forecastIconUrl = "https://openweathermap.org/img/w/" + forecast.weather[0].icon + ".png";
-
-    // Create column for each forecast day
-    var $forecastColumn = $("<div class='col-md-3'>");
-
-    // Create container for each forecast day
-    var $forecastContainer = $("<div class='forecast-day text-center'>");
-    $forecastContainer.append("<p>Date: " + forecastDate.split(' ')[0] + "</p>");
-    $forecastContainer.append("<img src='" + forecastIconUrl + "' alt='Weather Icon'>");
-    $forecastContainer.append("<p>Temperature: " + (forecast.main.temp - 273.15).toFixed(2) + " °C</p>");
-    $forecastContainer.append("<p>Humidity: " + forecast.main.humidity + "%</p>");
-    $forecastContainer.append("<p>Wind Speed: " + forecast.wind.speed + " m/s</p>");
-
-    // Append forecast day container to forecast column
-    $forecastColumn.append($forecastContainer);
-
-    // Append forecast column to row
-    $weatherRow.append($forecastColumn); 
+    // Create row for the weather content
+    var $weatherRow = $("<div class='row'>");
+  
+    // Create container for city name
+    var $cityContainer = $("<div class='col-md-12 mx-auto text-center mb-4 city-container'>");
+    $cityContainer.append("<h2>" + weatherData.city.name + "</h2>");
+  
+    // Append city container to weather row
+    $weatherRow.append($cityContainer);
+  
+    // Loop through 5-day forecast
+    for (var i = 0; i < 5; i++) {
+      var forecast = weatherData.list[i * 8];
+      var forecastDate = forecast.dt_txt;
+      var forecastIconUrl = "https://openweathermap.org/img/w/" + forecast.weather[0].icon + ".png";
+  
+      // Create column for each forecast day
+      var $forecastColumn = $("<div class='col-md-2'>");
+  
+      // Create container for each forecast day
+      var $forecastContainer = $("<div class='forecast-day text-center'>");
+      $forecastContainer.append("<p>Date: " + forecastDate.split(' ')[0] + "</p>");
+      $forecastContainer.append("<img src='" + forecastIconUrl + "' alt='Weather Icon'>");
+      $forecastContainer.append("<p>Temperature: " + (forecast.main.temp - 273.15).toFixed(2) + " °C</p>");
+      $forecastContainer.append("<p>Humidity: " + forecast.main.humidity + "%</p>");
+      $forecastContainer.append("<p>Wind Speed: " + forecast.wind.speed + " m/s</p>");
+  
+      // Append forecast day container to forecast column
+      $forecastColumn.append($forecastContainer);
+  
+      // Append forecast column to row
+      $weatherRow.append($forecastColumn);
+    }
+  
+    // Append content row to weather-info div
+    $("#weather-info").append($weatherRow);
   }
-
-  // Append content row to weather-info div
-  $("#weather-info").append($weatherRow);
- }
 
   // With the following function I create a button for the searched city, the buttons will remain in the internal storage untill deleted, and will allow users to perform a quick, updated search based on the city name.
 
